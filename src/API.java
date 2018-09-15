@@ -1,8 +1,4 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-
 public class API {
     private ArrayList<Integer> numbersArray = new ArrayList<>();
 
@@ -19,7 +15,10 @@ public class API {
         numbersArray.add(200000);
         numbersArray.add(400000);
         numbersArray.add(800000);
-        Assignment2();
+//        Om Assignment 1.1 en 1.2 te testen, uncomment de volgende lijnen van code, en comment de "Assignment3();"
+//        Assignment1();
+//        Assignment2();
+        Assignment3();
     }
 
     private void Assignment1() {
@@ -32,7 +31,6 @@ public class API {
             System.out.println("Time for " + amount + " numbers: " + (finish - start));
         }
     }
-
     private void Assignment2() {
         Assignment1_2 assignment1_2 = new Assignment1_2();
         for (int amount : numbersArray
@@ -42,5 +40,16 @@ public class API {
             long finish = System.currentTimeMillis();
             System.out.println("Time for " + amount + " numbers: " + (finish - start));
         }
+    }
+    private void Assignment3() {
+        Assignment1_3 assignment1_3 = new Assignment1_3();
+        for (int amount : numbersArray
+                ) {
+            long start = System.currentTimeMillis();
+            assignment1_3.run(amount);
+            long finish = System.currentTimeMillis();
+            System.out.println("Time for " + amount + " numbers: " + (finish - start));
+        }
+        System.out.println("Process done");
     }
 }
