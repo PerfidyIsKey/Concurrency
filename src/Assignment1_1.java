@@ -6,7 +6,7 @@ public class Assignment1_1 {
 
     }
 
-    private ArrayList<Integer> createList(int amountOfNumbers) {
+    public ArrayList<Integer> createList(int amountOfNumbers) {
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < amountOfNumbers; i++) {
             list.add((int) (Math.random() * 100) + 1);

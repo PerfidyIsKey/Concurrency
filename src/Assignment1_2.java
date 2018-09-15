@@ -3,8 +3,15 @@ import java.util.ArrayList;
 
 public class Assignment1_2 {
     public void sortList(int amount) {
-        ArrayList<Integer> listToSort1 = createList(amount / 2);
-        ArrayList<Integer> listToSort2 = createList(amount / 2);
+        ArrayList<Integer> list = createList(amount);
+        ArrayList<Integer> listToSort1 = new ArrayList<>();
+        ArrayList<Integer> listToSort2 = new ArrayList<>();
+        for (int i = 0; i < list.size()/2; i++) {
+            listToSort1.add(list.get(i));
+        }
+        for (int i = list.size()/2; i < list.size(); i++) {
+            listToSort2.add(list.get(i));
+        }
         Assignment1_2SelSortThread sorter1 = new Assignment1_2SelSortThread(listToSort1);
         Assignment1_2SelSortThread sorter2 = new Assignment1_2SelSortThread(listToSort2);
         Thread t1 = new Thread(sorter1);
@@ -19,7 +26,7 @@ public class Assignment1_2 {
         System.out.println(mergeLists(sorter1.getList(), sorter2.getList()));
     }
 
-    private ArrayList<Integer> createList(int amount) {
+    public ArrayList<Integer> createList(int amount) {
         ArrayList<Integer> unsortedList = new ArrayList<>();
         for (int i = 0; i < amount; i++) {
             int random = (int) (Math.random() * 100) + 1;
@@ -28,7 +35,7 @@ public class Assignment1_2 {
         return unsortedList;
     }
 
-    private ArrayList<Integer> mergeLists(ArrayList<Integer> list1, ArrayList<Integer> list2) {
+    public ArrayList<Integer> mergeLists(ArrayList<Integer> list1, ArrayList<Integer> list2) {
         int currentIndex = 0;
         for (int number : list2) {
             boolean found = false;
