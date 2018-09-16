@@ -26,6 +26,11 @@ public class Assignment1_2 {
         System.out.println(mergeLists(sorter1.getList(), sorter2.getList()));
     }
 
+    /**
+     * This method creates a list of random numbers depending on the amount specified.
+     * @param amount is the amount of numbers that needs to be created.
+     * @return the created list.
+     */
     public ArrayList<Integer> createList(int amount) {
         ArrayList<Integer> unsortedList = new ArrayList<>();
         for (int i = 0; i < amount; i++) {
@@ -35,6 +40,12 @@ public class Assignment1_2 {
         return unsortedList;
     }
 
+    /**
+     * In this method we merge the two lists provided into one sorted list.
+     * @param list1 is the list from the first thread.
+     * @param list2 is the list from the second thread.
+     * @return the sorted and merged list.
+     */
     public ArrayList<Integer> mergeLists(ArrayList<Integer> list1, ArrayList<Integer> list2) {
         int currentIndex = 0;
         for (int number : list2) {

@@ -8,18 +8,25 @@ public class Assignment1_3 {
         System.out.println(recursiveSort(list));
     }
 
+    /**
+     * This method recursively splits the list provided into threads if the if-statement is reached, and merges them afterwards.
+     * @param list the list provided by the outer method, or provided recursively by the thread.
+     * @return the sorted list created.
+     */
     public ArrayList<Integer> recursiveSort(ArrayList<Integer> list) {
         Assignment1_2 assignment1_2 = new Assignment1_2();
 
         if (list.size() > 200000) {
             ArrayList<Integer> listToSort1 = new ArrayList<>();
             ArrayList<Integer> listToSort2 = new ArrayList<>();
+            //these for-loops split the array into 2 separate arrays.
             for (int i = 0; i < list.size() / 2; i++) {
                 listToSort1.add(list.get(i));
             }
             for (int i = list.size() / 2; i < list.size(); i++) {
                 listToSort2.add(list.get(i));
             }
+
             Assignment1_2SelSortThread sorter1 = new Assignment1_2SelSortThread(listToSort1);
             Assignment1_2SelSortThread sorter2 = new Assignment1_2SelSortThread(listToSort2);
             Thread t1 = new Thread(sorter1);

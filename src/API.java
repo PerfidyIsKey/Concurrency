@@ -1,12 +1,11 @@
 import java.util.ArrayList;
+
 public class API {
     private ArrayList<Integer> numbersArray = new ArrayList<>();
 
     public static void main(String[] args) {
         new API().run();
     }
-
-    private ArrayList<Integer> AmountOfNumbersArray = new ArrayList<>();
 
     private void run() {
         numbersArray.add(25000);
@@ -15,22 +14,23 @@ public class API {
         numbersArray.add(200000);
         numbersArray.add(400000);
         numbersArray.add(800000);
-//        Om Assignment 1.1 en 1.2 te testen, uncomment de volgende lijnen van code, en comment de "Assignment3();"
+//        To test Assignment 1.1 and 1.2, uncomment the following lines of code, and comment "Assignment3();"
 //        Assignment1();
 //        Assignment2();
         Assignment3();
     }
 
     private void Assignment1() {
-        Assignment1_1 assignment11 = new Assignment1_1();
+        Assignment1_1 assignment1_1 = new Assignment1_1();
         for (int amount : numbersArray
                 ) {
             long start = System.currentTimeMillis();
-            assignment11.run(amount);
+            assignment1_1.run(amount);
             long finish = System.currentTimeMillis();
             System.out.println("Time for " + amount + " numbers: " + (finish - start));
         }
     }
+
     private void Assignment2() {
         Assignment1_2 assignment1_2 = new Assignment1_2();
         for (int amount : numbersArray
@@ -41,6 +41,7 @@ public class API {
             System.out.println("Time for " + amount + " numbers: " + (finish - start));
         }
     }
+
     private void Assignment3() {
         Assignment1_3 assignment1_3 = new Assignment1_3();
         for (int amount : numbersArray
