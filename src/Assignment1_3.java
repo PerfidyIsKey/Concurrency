@@ -2,7 +2,10 @@ import java.util.ArrayList;
 
 public class Assignment1_3 {
 
-    public void run(int amount) {
+    private int threshold;
+
+    public void run(int amount, int threshold) {
+        this.threshold = threshold;
         Assignment1_2 assignment1_2 = new Assignment1_2();
         ArrayList<Integer> list = assignment1_2.createList(amount);
         System.out.println(recursiveSort(list));
@@ -16,7 +19,7 @@ public class Assignment1_3 {
     public ArrayList<Integer> recursiveSort(ArrayList<Integer> list) {
         Assignment1_2 assignment1_2 = new Assignment1_2();
 
-        if (list.size() > 200000) {
+        if (list.size() > threshold) {
             ArrayList<Integer> listToSort1 = new ArrayList<>();
             ArrayList<Integer> listToSort2 = new ArrayList<>();
             //these for-loops split the array into 2 separate arrays.
