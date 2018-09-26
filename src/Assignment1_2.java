@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Assignment1_2 {
@@ -23,9 +22,8 @@ public class Assignment1_2 {
             t2.join();
         } catch (InterruptedException iex) {
         }
-        System.out.println(mergeLists(sorter1.getList(), sorter2.getList()));
+        System.out.println(mergeLists(sorter1.getList(),sorter2.getList()));
     }
-
     /**
      * This method creates a list of random numbers depending on the amount specified.
      * @param amount is the amount of numbers that needs to be created.
